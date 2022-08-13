@@ -13,7 +13,7 @@ echo "127.0.1.1 begnulinux.localdomain begnulinux" >> /etc/hosts
 echo root:meshoo | chpasswd
 
 # Install packages
-pacman -S --noconfirm xorg thunar grub efibootmgr acpi clementine smplayer mpv notepadqq gparted keepassxc acpi_call acpid openssh networkmanager reflector avahi network-manager-applet dialog gpicview xarchiver htop wpa_supplicant mtools net-tools dosfstools ntfs-3g base-devel linux-headers bluez bluez-utils cups xdg-utils xdg-user-dirs pulseaudio pulseaudio-bluetooth alsa-utils pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings i3-gaps i3lock rofi trayer alacritty dmenu picom firefox python-requests pacman-contrib playerctl python-dbus dunst awesome-terminal-fonts ttf-font-awesome scrot vlc pacman-contrib base-devel bash-completion usbutils lsof dmidecode neofetch zip unzip unrar p7zip lzop
+pacman -S --noconfirm xorg thunar grub efibootmgr acpi clementine smplayer mpv notepadqq gparted keepassxc acpi_call acpid openssh networkmanager reflector avahi network-manager-applet dialog gpicview blueman xfce3-power-manager xarchiver htop wpa_supplicant mtools net-tools dosfstools ntfs-3g base-devel linux-headers bluez bluez-utils cups xdg-utils xdg-user-dirs pulseaudio pulseaudio-bluetooth alsa-utils pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings i3-gaps i3lock rofi trayer alacritty dmenu picom firefox python-requests pacman-contrib playerctl python-dbus dunst awesome-terminal-fonts ttf-font-awesome scrot vlc pacman-contrib base-devel bash-completion usbutils lsof dmidecode neofetch zip unzip unrar p7zip lzop
 
 
 #Network tools
