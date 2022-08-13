@@ -13,7 +13,7 @@ echo "127.0.1.1 begnulinux.localdomain begnulinux" >> /etc/hosts
 echo root:meshoo | chpasswd
 
 # Install packages
-pacman -S --noconfirm xorg thunar grub efibootmgr acpi clementine smplayer mpv notepadqq gparted keepassxc acpi_call acpid openssh networkmanager reflector avahi network-manager-applet dialog gpicview blueman xfce3-power-manager xarchiver htop wpa_supplicant mtools net-tools dosfstools ntfs-3g base-devel linux-headers bluez bluez-utils cups xdg-utils xdg-user-dirs pulseaudio pulseaudio-bluetooth alsa-utils pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings i3-gaps i3lock rofi trayer alacritty dmenu picom firefox python-requests pacman-contrib playerctl python-dbus dunst awesome-terminal-fonts ttf-font-awesome scrot vlc pacman-contrib base-devel bash-completion usbutils lsof dmidecode neofetch zip unzip unrar p7zip lzop
+pacman -S --noconfirm xorg thunar grub efibootmgr acpi clementine smplayer mpv notepadqq gparted keepassxc acpi_call acpid openssh networkmanager reflector avahi network-manager-applet dialog gpicview blueman xfce3-power-manager xarchiver htop wpa_supplicant mtools net-tools dosfstools ntfs-3g base-devel linux-headers bluez bluez-utils cups xdg-utils xdg-user-dirs pulseaudio pulseaudio-bluetooth alsa-utils pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings i3-gaps i3lock rofi trayer alacritty dmenu picom firefox python-requests pacman-contrib playerctl python-dbus dunst awesome-terminal-fonts ttf-font-awesome scrot vlc pacman-contrib base-devel bash-completion usbutils lsof dmidecode neofetch zip unzip unrar p7zip lzop zsh zsh-completions
 
 
 #Network tools
@@ -39,6 +39,8 @@ pacman -S --noconfirm nss jq xsel networkmanager tmux nginx
 pacman -S --noconfirm gst-plugins-base gst-plugins-good gst-plugins-ugly gst-libav
 
 
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ./MesloLGS-NF
+sudo mv MesloLGS-NF /usr/share/fonts
 
 systemctl enable NetworkManager
 systemctl enable cronie
