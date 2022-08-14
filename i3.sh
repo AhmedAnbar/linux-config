@@ -38,6 +38,8 @@ pacman -S --noconfirm nss jq xsel networkmanager tmux nginx
 # Gstreamer
 pacman -S --noconfirm gst-plugins-base gst-plugins-good gst-plugins-ugly gst-libav
 
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
 
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ./MesloLGS-NF
 sudo mv MesloLGS-NF /usr/share/fonts
@@ -47,7 +49,7 @@ systemctl enable cronie
 systemctl enable numlockon
 systemctl enable heveged
 systemctl enable bluetooth
-systemctl enable cups.service
+systemctl enable cups
 systemctl enable sshd
 systemctl enable avahi-daemon
 systemctl enable nginx
@@ -55,16 +57,25 @@ systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable acpid
 
+printf "\e[1;32mCreating user.\e[0m\n"
 useradd -m anbar
-echo anbar:password | chpasswd
+echo anbar:meshoo | chpasswd
 usermod -aG wheel anbar
 
+
+printf "\e[1;32mMounting NTFS.\e[0m\n"
 mkdir /home/anbar/NTFS
 
 echo "UUID=2DDA5B7D18F5F6D8 /home/anbar/NTFS  ntfs-3g rw      0       0" >> /etc/fstab
 
-#yay -S --noconfirm teams dropbox telegram-desktop google-chrome
-#yay -S --needed  ttf-ms-fonts
+printf "\e[1;32mInstalling yay.\e[0m\n"
+cd /opt
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+yay -S --noconfirm teams dropbox telegram-desktop google-chrome
+yay -S --noconfirm  ttf-ms-fonts
 
 printf "\e[1;32mDone! you can now reboot.\e[0m\n"
 
